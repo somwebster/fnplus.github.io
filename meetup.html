@@ -87,6 +87,7 @@
     <link rel="stylesheet" href="css/meetup/meetup.css">
 
 </head>
+
 <body>
 
     <nav id="colorlib-main-nav" role="navigation">
@@ -132,6 +133,15 @@
 
                 <div class="row">
                     <div class="col-md-12 col-md-offset-0">
+                        <select name="location" id="meetup-location" onchange="changeLocation()">
+                            <option value="chennai">Chennai</option>
+                            <option value="bangalore">Bangolore</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-md-offset-0">
                         <div class="row">
                             <div class="mup-centered-widget animate-box">
                                 <div class="framed-mup-widget">
@@ -157,6 +167,7 @@
                                 clear: left;
                                 font: 14px Helvetica, Arial, sans-serif;
                             }
+
                             /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
 	                        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
                         </style>
@@ -220,12 +231,12 @@
                                 <h2>Social</h2>
                                 <p class="colorlib-social-icons">
                                     <a href="https://www.facebook.com/fnplusofficial/"><i class="icon-facebook4"></i></a>
-									<a href="https://twitter.com/fnplusofficial"><i class="icon-twitter3"></i></a>
-									<a href="https://instagram.com/fnplusofficial"><i class="icon-instagram"></i></a>
-									<a href="https://github.com/fnplus"><i class="icon-github"></i></a>
-                  					<a href="https://www.youtube.com/channel/UCP9sGE-eMnDBbEdNs_BnCIQ"><i class="fa fa-youtube"></i></a>
-                  					<a href="https://medium.com/fnplus"><i class="fa fa-medium"></i></a>
-                  					<a href="https://www.linkedin.com/company/fnplus/"><i class="icon-linkedin"></i></a>
+                                    <a href="https://twitter.com/fnplusofficial"><i class="icon-twitter3"></i></a>
+                                    <a href="https://instagram.com/fnplusofficial"><i class="icon-instagram"></i></a>
+                                    <a href="https://github.com/fnplus"><i class="icon-github"></i></a>
+                                    <a href="https://www.youtube.com/channel/UCP9sGE-eMnDBbEdNs_BnCIQ"><i class="fa fa-youtube"></i></a>
+                                    <a href="https://medium.com/fnplus"><i class="fa fa-medium"></i></a>
+                                    <a href="https://www.linkedin.com/company/fnplus/"><i class="icon-linkedin"></i></a>
                                 </p>
                             </div>
                         </div>
@@ -323,5 +334,6 @@
             <!-- Main JS (Do not remove) -->
             <script src="js/main.js"></script>
 
-    </body>
+</body>
+
 </html>

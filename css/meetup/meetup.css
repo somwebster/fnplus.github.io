@@ -93,6 +93,10 @@
      padding-right: 2px;
  }
 
+ #meetup-location{
+     border: 1px solid transparent;
+ }
+
  .mug-badge .mup-widget .mup-stats {
      display: block;
      margin: 6px 0;
