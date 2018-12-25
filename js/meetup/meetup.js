@@ -198,8 +198,16 @@ var load_widget = function ($, ctx) {
                     alert(data.status + ": " + data.details);
                 } else {
                     if (data.results.length == 0) {
-                        console.log('what up');
                         $('.mupast-widget', ctx).append('<div class="mupast-nojams">No Jams</div>');
+                    }
+
+                    else {
+                        $('.mupast-widget', ctx).append('<div class="mupast-meetups"></div>');
+
+                        for (var i in data.results) {
+                            let event = data.results[i];
+                            $('.mupast-meetups', ctx).append('<div>' + event.name + ' - ' + getFormattedDate(event.time) + '</div>');
+                        }
                     }
                 }
 
