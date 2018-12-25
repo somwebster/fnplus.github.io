@@ -1,4 +1,25 @@
-mup_widget.with_jquery(function ($, ctx) {
+var $parameters = {
+    urlname: "geek-meetup-chennai",
+    width: 500,
+    _name: "Meetup Group Stats",
+    _description: "Shows basic stats on your favorite Meetup group."
+};
+
+var $queries = {
+    groups: function () {
+        return mup_widget.api_call("/2/groups", {
+            group_urlname: $parameters.urlname
+        });
+    },
+    events: function () {
+        return mup_widget.api_call("/2/events", {
+            group_urlname: $parameters.urlname,
+            page: '1'
+        });
+    }
+};
+
+var load_widget = function ($, ctx) {
     var group = '',
         months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         addLink = function (content, link) {
@@ -8,34 +29,37 @@ mup_widget.with_jquery(function ($, ctx) {
             return src == "" ? '' : '<div class="mup-img-wrap"><img src="' + src + '" width="' + (
                 $parameters.width - 50) + '" alt="' + alt + '" class="mup-img"/></div>';
         },
-        addStarRating = function (rating) {
-            var base_url =
-                'https://a248.e.akamai.net/secure.meetupstatic.com/img/03784007994490629714917/star_';
-            var starlink = '';
-            if (rating == 0) {
-                return 'Not Yet Rated';
-            } else if (rating < 1.25) {
-                starlink = "100.png";
-            } else if (rating < 1.75) {
-                starlink = "150.png";
-            } else if (rating < 2.25) {
-                starlink = "200.png";
-            } else if (rating < 2.75) {
-                starlink = "250.png";
-            } else if (rating < 3.25) {
-                starlink = "300.png";
-            } else if (rating < 3.75) {
-                starlink = "350.png";
-            } else if (rating < 4.25) {
-                starlink = "400.png";
-            } else if (rating < 4.75) {
-                starlink = "450.png";
-            } else {
-                starlink = "500.png";
-            }
-            return '<img src="' + base_url + starlink + '" alt="' + rating + '" />';
 
-        },
+        // Meetup Rating add star
+
+        // addStarRating = function (rating) {
+        //     var base_url =
+        //         'https://a248.e.akamai.net/secure.meetupstatic.com/img/03784007994490629714917/star_';
+        //     var starlink = '';
+        //     if (rating == 0) {
+        //         return 'Not Yet Rated';
+        //     } else if (rating < 1.25) {
+        //         starlink = "100.png";
+        //     } else if (rating < 1.75) {
+        //         starlink = "150.png";
+        //     } else if (rating < 2.25) {
+        //         starlink = "200.png";
+        //     } else if (rating < 2.75) {
+        //         starlink = "250.png";
+        //     } else if (rating < 3.25) {
+        //         starlink = "300.png";
+        //     } else if (rating < 3.75) {
+        //         starlink = "350.png";
+        //     } else if (rating < 4.25) {
+        //         starlink = "400.png";
+        //     } else if (rating < 4.75) {
+        //         starlink = "450.png";
+        //     } else {
+        //         starlink = "500.png";
+        //     }
+        //     return '<img src="' + base_url + starlink + '" alt="' + rating + '" />';
+
+        // },
         addLeadingZero = function (num) {
             return (num < 10) ? ('0' + num) : num;
         },
@@ -157,5 +181,25 @@ mup_widget.with_jquery(function ($, ctx) {
                 }
             });
         }
+    });
+};
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    mup_widget.with_jquery(load_widget);
+
+    var location_select = document.getElementById('meetup-location');
+
+    location_select.addEventListener('change', function () {
+        let location = location_select.value;
+
+        document.querySelector('.mug-badge').innerHTML = '';
+
+        $parameters.urlname = 'geek-meetup-' + location;
+
+        mup_widget.with_jquery(load_widget);
     });
 });

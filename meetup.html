@@ -61,32 +61,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
     <script src="js/meetup/local.js"></script>
     <script src="js/meetup/api_key.js"></script>
-    <script id="config" type="text/javascript" charset="utf-8">
-        var $parameters = {
-            urlname: "geek-meetup-chennai",
-            width: 500,
-            _name: "Meetup Group Stats",
-            _description: "Shows basic stats on your favorite Meetup group."
-        };
-        var $queries = {
-            groups: function () {
-                return mup_widget.api_call("/2/groups", {
-                    group_urlname: $parameters.urlname
-                });
-            },
-            events: function () {
-                return mup_widget.api_call("/2/events", {
-                    group_urlname: $parameters.urlname,
-                    page: '1'
-                });
-            }
-        };
-    </script>
     <link rel="stylesheet" type="text/css" href="css/meetup/widget.css">
     <script src="js/meetup/meetup.js"></script>
     <link rel="stylesheet" href="css/meetup/meetup.css">
 
 </head>
+
 <body>
 
     <nav id="colorlib-main-nav" role="navigation">
@@ -132,6 +112,15 @@
 
                 <div class="row">
                     <div class="col-md-12 col-md-offset-0">
+                        <select name="location" id="meetup-location">
+                            <option value="chennai">Chennai</option>
+                            <option value="bangalore">Bangalore</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-md-offset-0">
                         <div class="row">
                             <div class="mup-centered-widget animate-box">
                                 <div class="framed-mup-widget">
@@ -157,6 +146,7 @@
                                 clear: left;
                                 font: 14px Helvetica, Arial, sans-serif;
                             }
+
                             /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
 	                        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
                         </style>
@@ -220,12 +210,12 @@
                                 <h2>Social</h2>
                                 <p class="colorlib-social-icons">
                                     <a href="https://www.facebook.com/fnplusofficial/"><i class="icon-facebook4"></i></a>
-									<a href="https://twitter.com/fnplusofficial"><i class="icon-twitter3"></i></a>
-									<a href="https://instagram.com/fnplusofficial"><i class="icon-instagram"></i></a>
-									<a href="https://github.com/fnplus"><i class="icon-github"></i></a>
-                  					<a href="https://www.youtube.com/channel/UCP9sGE-eMnDBbEdNs_BnCIQ"><i class="fa fa-youtube"></i></a>
-                  					<a href="https://medium.com/fnplus"><i class="fa fa-medium"></i></a>
-                  					<a href="https://www.linkedin.com/company/fnplus/"><i class="icon-linkedin"></i></a>
+                                    <a href="https://twitter.com/fnplusofficial"><i class="icon-twitter3"></i></a>
+                                    <a href="https://instagram.com/fnplusofficial"><i class="icon-instagram"></i></a>
+                                    <a href="https://github.com/fnplus"><i class="icon-github"></i></a>
+                                    <a href="https://www.youtube.com/channel/UCP9sGE-eMnDBbEdNs_BnCIQ"><i class="fa fa-youtube"></i></a>
+                                    <a href="https://medium.com/fnplus"><i class="fa fa-medium"></i></a>
+                                    <a href="https://www.linkedin.com/company/fnplus/"><i class="icon-linkedin"></i></a>
                                 </p>
                             </div>
                         </div>
@@ -323,5 +313,6 @@
             <!-- Main JS (Do not remove) -->
             <script src="js/main.js"></script>
 
-    </body>
+</body>
+
 </html>

@@ -93,6 +93,18 @@
      padding-right: 2px;
  }
 
+ #meetup-location{
+    border: 1px solid transparent;
+    text-overflow: '';
+    background-color: transparent;
+    width: 150px;
+    font-size: 20px;
+ }
+
+ #meetup-location:focus{
+     outline: none;
+ }
+
  .mug-badge .mup-widget .mup-stats {
      display: block;
      margin: 6px 0;
