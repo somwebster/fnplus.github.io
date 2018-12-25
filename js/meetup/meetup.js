@@ -16,6 +16,13 @@ var $queries = {
             group_urlname: $parameters.urlname,
             page: '1'
         });
+    },
+    past_events: function () {
+        return mup_widget.api_call("/2/events", {
+            group_urlname: $parameters.urlname,
+            page: '5',
+            status: 'past'
+        })
     }
 };
 
@@ -179,6 +186,23 @@ var load_widget = function ($, ctx) {
                             '<div class="mup-tlabel">' + location + "</div></h4>");
                     }
                 }
+            });
+
+            $.getJSON($queries.past_events(), function (data) {
+
+                $('.mug-badge', ctx).append('<div class="mupast-widget"> \
+                <div class="mupast-heading">Past Jams</div> \
+                </div>');
+
+                if (data.status && data.status.match(/^200/) == null) {
+                    alert(data.status + ": " + data.details);
+                } else {
+                    if (data.results.length == 0) {
+                        console.log('what up');
+                        $('.mupast-widget', ctx).append('<div class="mupast-nojams">No Jams</div>');
+                    }
+                }
+
             });
         }
     });
