@@ -190,10 +190,6 @@ var load_widget = function ($, ctx) {
 
             $.getJSON($queries.past_events(), function (data) {
 
-                $('.mug-badge', ctx).append('<div class="mupast-widget"> \
-                <div class="mupast-heading">Past Jams</div> \
-                </div>');
-
                 if (data.status && data.status.match(/^200/) == null) {
                     alert(data.status + ": " + data.details);
                 } else {
@@ -202,6 +198,10 @@ var load_widget = function ($, ctx) {
                     }
 
                     else {
+                        $('.mug-badge', ctx).append('<div class="mupast-widget"> \
+                            <div class="mupast-heading">Past Jams</div> \
+                        </div>');
+
                         $('.mupast-widget', ctx).append('<div class="mupast-meetups"></div>');
                         let past_events_array = data.results.reverse();
                         for (var i in past_events_array) {
@@ -212,7 +212,6 @@ var load_widget = function ($, ctx) {
                                     </div> \
                                         <div class="mupast-content"> \
                                             <div class="mupast-widget-heading"><a href="' + event.event_url + '" target="_blank">' + event.name + '</a></div> \
-                                            <div class="">Description</div> \
                                         </div> \
                                     </div>');
                         }

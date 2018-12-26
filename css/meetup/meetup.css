@@ -173,7 +173,8 @@
  }
 
  .mupast-nojams{
-     font-size: 20px;
+     font-size: 30px;
+     text-align: center;
  }
 
  .mupast-heading{
@@ -189,6 +190,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     display: flex;
     margin: 20px 0 40px 0;
+    background-color: white;
 }
 
 .mupast-main:hover {
@@ -211,13 +213,25 @@
     padding: 15px 0px 0px 10px;
 }
 
+.mupast-widget-heading{
+    padding-left: 10px;
+}
+
 .mupast-widget-heading a{
-    font-size: 20px;
+    font-size: 22px;
     padding: 0px;
     text-decoration: none;
     color: #333333;
+    line-height: 60px;
+    text-align: center;
 }
 
 .mupast-widget-heading a:hover{
     color: black;
 }
+
+/* @media only screen and (max-width: 768px) {
+    .mupast-main{
+        height: 80px;
+    }
+} */
