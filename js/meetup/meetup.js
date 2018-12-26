@@ -203,16 +203,16 @@ var load_widget = function ($, ctx) {
 
                     else {
                         $('.mupast-widget', ctx).append('<div class="mupast-meetups"></div>');
-
-                        for (var i in data.results) {
-                            let event = data.results[i];
+                        let past_events_array = data.results.reverse();
+                        for (var i in past_events_array) {
+                            let event = past_events_array[i];
                             $('.mupast-meetups', ctx).append('<div class="mupast-main"> \
                                 <div class= "mupast-inner"> \
-                                    <div class="mupast-inner-text"> 10 Jun 2018 </div> \
+                                    <div class="mupast-inner-text">' + getFormattedDate(event.time).replace(',', '') + ' </div> \
                                     </div> \
                                         <div class="mupast-content"> \
-                                            <h4>'+ event.name + '</h4> \
-                                            <p>Description</p> \
+                                            <div class="mupast-widget-heading"><a href="' + event.event_url + '" target="_blank">' + event.name + '</a></div> \
+                                            <div class="">Description</div> \
                                         </div> \
                                     </div>');
                         }
