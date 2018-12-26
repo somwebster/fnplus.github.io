@@ -16,6 +16,13 @@ var $queries = {
             group_urlname: $parameters.urlname,
             page: '1'
         });
+    },
+    past_events: function () {
+        return mup_widget.api_call("/2/events", {
+            group_urlname: $parameters.urlname,
+            page: '5',
+            status: 'past'
+        })
     }
 };
 
@@ -179,6 +186,38 @@ var load_widget = function ($, ctx) {
                             '<div class="mup-tlabel">' + location + "</div></h4>");
                     }
                 }
+            });
+
+            $.getJSON($queries.past_events(), function (data) {
+
+                if (data.status && data.status.match(/^200/) == null) {
+                    alert(data.status + ": " + data.details);
+                } else {
+                    if (data.results.length == 0) {
+                        $('.mupast-widget', ctx).append('<div class="mupast-nojams">No Jams</div>');
+                    }
+
+                    else {
+                        $('.mug-badge', ctx).append('<div class="mupast-widget"> \
+                            <div class="mupast-heading">Past Jams</div> \
+                        </div>');
+
+                        $('.mupast-widget', ctx).append('<div class="mupast-meetups"></div>');
+                        let past_events_array = data.results.reverse();
+                        for (var i in past_events_array) {
+                            let event = past_events_array[i];
+                            $('.mupast-meetups', ctx).append('<div class="mupast-main"> \
+                                <div class= "mupast-inner"> \
+                                    <div class="mupast-inner-text">' + getFormattedDate(event.time).replace(',', '') + ' </div> \
+                                    </div> \
+                                        <div class="mupast-content"> \
+                                            <div class="mupast-widget-heading"><a href="' + event.event_url + '" target="_blank">' + event.name + '</a></div> \
+                                        </div> \
+                                    </div>');
+                        }
+                    }
+                }
+
             });
         }
     });
