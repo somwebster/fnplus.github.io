@@ -214,15 +214,15 @@
 }
 
 .mupast-widget-heading{
+    padding-top: 12px;
     padding-left: 10px;
 }
 
 .mupast-widget-heading a{
-    font-size: 22px;
+    font-size: 20px;
     padding: 0px;
     text-decoration: none;
     color: #333333;
-    line-height: 60px;
     text-align: center;
 }
 
@@ -230,8 +230,25 @@
     color: black;
 }
 
-/* @media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .mupast-main{
         height: 80px;
     }
-} */
+
+    .mupast-inner{
+        width: 80px;
+    }
+
+    .mupast-inner-text {
+        font-size: 15px;
+    }
+
+    .mupast-widget-heading{
+        padding-top: 7px;
+    }
+
+    .mupast-widget-heading a{
+        font-size: 15px;
+        line-height: 0.7;
+    }
+}
