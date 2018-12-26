@@ -181,3 +181,30 @@
      font-weight: 400;
      color: #333333;
  }
+
+.mupast-main {
+    height: 100px;
+    width: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    margin: 20px;
+}
+
+.mupast-main:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.mupast-inner {
+    width: 90px;
+    background-color: blue;
+    padding: 13px 0px 0px 0px;
+}
+
+.mupast-inner-text {
+    font-size: 20px;
+    text-align: center;
+}
+
+.mupast-content {
+    padding: 15px 0px 0px 10px;
+}

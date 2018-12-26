@@ -206,7 +206,15 @@ var load_widget = function ($, ctx) {
 
                         for (var i in data.results) {
                             let event = data.results[i];
-                            $('.mupast-meetups', ctx).append('<div>' + event.name + ' - ' + getFormattedDate(event.time) + '</div>');
+                            $('.mupast-meetups', ctx).append('<div class="mupast-main"> \
+                                <div class= "mupast-inner"> \
+                                    <div class="mupast-inner-text"> 10 Jun 2018 </div> \
+                                    </div> \
+                                        <div class="mupast-content"> \
+                                            <h4>'+ event.name + '</h4> \
+                                            <p>Description</p> \
+                                        </div> \
+                                    </div>');
                         }
                     }
                 }
