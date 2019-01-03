@@ -178,12 +178,13 @@ var load_widget = function ($, ctx) {
                         } else {
                             venue_addr = "";
                         }
-                        var location = venue_addr + city + ", " + state_country;
-                        $('.next-event', ctx).append('<h4><div class="mup-tlabel">' +
+                        var location = venue_addr + city + ", India";
+                        $('.next-event', ctx).append("<div class='mup-tlabel mupn-heading'> \
+                            <a target='_blank' href='"+ event.event_url + "'>" + event.name + "</a> \
+                            </div>" + '<div class="mup-tlabel">' +
                             getFormattedDate(event.time) + '   |   ' +
-                            getFormattedTime(event.time) + "</div>" + addLink(event
-                                .name, event.event_url) +
-                            '<div class="mup-tlabel">' + location + "</div></h4>");
+                            getFormattedTime(event.time) + "</div>" +
+                            '<div class="mup-tlabel">' + location + "</div>");
                     }
                 }
             });
