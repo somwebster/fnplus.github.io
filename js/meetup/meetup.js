@@ -20,7 +20,7 @@ var $queries = {
     past_events: function () {
         return mup_widget.api_call("/2/events", {
             group_urlname: $parameters.urlname,
-            page: '5',
+            page: '100',
             status: 'past'
         })
     }
@@ -30,7 +30,7 @@ var load_widget = function ($, ctx) {
     var group = '',
         months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         addLink = function (content, link) {
-            return '<a target="_top" href="' + link + '">' + content + '</a>';
+            return '<a target="_blank" href="' + link + '">' + content + '</a>';
         },
         addImage = function (src, alt) {
             return src == "" ? '' : '<div class="mup-img-wrap"><img src="' + src + '" width="' + (
@@ -204,7 +204,7 @@ var load_widget = function ($, ctx) {
                         </div>');
 
                         $('.mupast-widget', ctx).append('<div class="mupast-meetups"></div>');
-                        let past_events_array = data.results.reverse();
+                        let past_events_array = data.results.reverse().slice(0, 5);
                         for (var i in past_events_array) {
                             let event = past_events_array[i];
                             $('.mupast-meetups', ctx).append('<div class="mupast-main"> \
