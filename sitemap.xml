@@ -8,39 +8,44 @@
 
 
 <url>
-  <loc>http://www.fnplus.xyz/</loc>
-  <lastmod>2018-11-21T08:57:12+00:00</lastmod>
+  <loc>https://www.fnplus.tech/</loc>
+  <lastmod>2019-01-20T05:38:40+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://www.fnplus.xyz/index.html</loc>
-  <lastmod>2018-11-21T08:57:12+00:00</lastmod>
+  <loc>https://www.fnplus.tech/index.html</loc>
+  <lastmod>2019-01-20T05:38:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.fnplus.xyz/work.html</loc>
-  <lastmod>2018-11-21T08:57:12+00:00</lastmod>
+  <loc>https://www.fnplus.tech/work.html</loc>
+  <lastmod>2019-01-20T05:38:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.fnplus.xyz/about.html</loc>
-  <lastmod>2018-11-21T08:57:12+00:00</lastmod>
+  <loc>https://www.fnplus.tech/meetup.html</loc>
+  <lastmod>2019-01-20T05:38:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.fnplus.xyz/contact.html</loc>
-  <lastmod>2018-11-21T08:57:12+00:00</lastmod>
+  <loc>https://www.fnplus.tech/volunteer.html</loc>
+  <lastmod>2019-01-20T05:38:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.fnplus.xyz/work-single.html</loc>
-  <lastmod>2018-11-21T08:57:12+00:00</lastmod>
+  <loc>https://www.fnplus.tech/about.html</loc>
+  <lastmod>2019-01-20T05:38:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.fnplus.tech/contact.html</loc>
+  <lastmod>2019-01-20T05:38:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.fnplus.tech/error.html</loc>
+  <lastmod>2019-01-20T05:38:40+00:00</lastmod>
   <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://www.fnplus.xyz/blog.html</loc>
-  <lastmod>2018-11-21T08:57:12+00:00</lastmod>
-  <priority>0.51</priority>
 </url>
 
 
