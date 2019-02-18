@@ -192,10 +192,9 @@ var load_widget = function ($, ctx) {
             $.getJSON($queries.past_events(), function (data) {
 
                 if (data.status && data.status.match(/^200/) == null) {
+                    $('.mupast-widget', ctx).append('<div class="mupast-nojams">Upcoming Jams</div>');
                     alert(data.status + ": " + data.details);
-                    $('.mug-badge', ctx).append('<div class="mupast-widget"> \
-                            <div class="mupast-heading">Upcoming Jams</div> \
-                        </div>');
+                    
                 } else {
                     if (data.results.length == 0) {
                         $('.mupast-widget', ctx).append('<div class="mupast-nojams">No Jams</div>');
