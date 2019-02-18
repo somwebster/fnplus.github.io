@@ -193,6 +193,9 @@ var load_widget = function ($, ctx) {
 
                 if (data.status && data.status.match(/^200/) == null) {
                     alert(data.status + ": " + data.details);
+                    $('.mug-badge', ctx).append('<div class="mupast-widget"> \
+                            <div class="mupast-heading">Upcoming Jams</div> \
+                        </div>');
                 } else {
                     if (data.results.length == 0) {
                         $('.mupast-widget', ctx).append('<div class="mupast-nojams">No Jams</div>');
@@ -223,8 +226,6 @@ var load_widget = function ($, ctx) {
         }
     });
 };
-
-
 
 
 document.addEventListener('DOMContentLoaded', () => {
