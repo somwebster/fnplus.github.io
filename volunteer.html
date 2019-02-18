@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,8 +44,8 @@
     <style>
         body {
             background: -moz-linear-gradient(45deg, #02e1ba 0%, #26c9f2 29%, #d911f2 66%, #ffa079 100%);
-            background: -webkit-linear-gradient(45deg, #02e1ba 0%,#26c9f2 29%,#d911f2 66%,#ffa079 100%);
-            background: linear-gradient(45deg, #f1f7f6 0%,#c2c7ca 29%,#c7c2c7 66%);
+            background: -webkit-linear-gradient(45deg, #02e1ba 0%, #26c9f2 29%, #d911f2 66%, #ffa079 100%);
+            background: linear-gradient(45deg, #f1f7f6 0%, #c2c7ca 29%, #c7c2c7 66%);
             background-size: 400% 400%;
             -webkit-animation: Gradient 15s ease infinite;
             -moz-animation: Gradient 15s ease infinite;
@@ -54,11 +55,12 @@
             flex-direction: column;
             align-items: stretch;
             justify-content: space-evenly;
-            
-            position: relative; 
+
+            position: relative;
+            overflow-x: hidden;
         }
 
-        body::before, 
+        body::before,
         body::after {
             content: "";
             width: 70vmax;
@@ -71,9 +73,9 @@
             z-index: 1;
             will-change: border-radius, transform;
             transform-origin: 55% 55%;
-            pointer-events: none; 
+            pointer-events: none;
         }
-            
+
         body::after {
             width: 70vmin;
             height: 70vmin;
@@ -82,16 +84,18 @@
             top: auto;
             bottom: 0;
             animation: morph 10s linear infinite alternate, spin 26s linear infinite reverse;
-            transform-origin: 20% 20%; 
+            transform-origin: 20% 20%;
         }
 
         @-webkit-keyframes Gradient {
             0% {
                 background-position: 0 50%
             }
+
             50% {
                 background-position: 100% 50%
             }
+
             100% {
                 background-position: 0 50%
             }
@@ -101,9 +105,11 @@
             0% {
                 background-position: 0 50%
             }
+
             50% {
                 background-position: 100% 50%
             }
+
             100% {
                 background-position: 0 50%
             }
@@ -113,115 +119,197 @@
             0% {
                 background-position: 0 50%
             }
+
             50% {
                 background-position: 100% 50%
             }
+
             100% {
                 background-position: 0 50%
             }
         }
 
         @keyframes morph {
-        0% {
-            border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%; }
-        100% {
-            border-radius: 40% 60%; } 
+            0% {
+                border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
+            }
+
+            100% {
+                border-radius: 40% 60%;
+            }
         }
 
         @keyframes spin {
-        to {
-            transform: rotate(1turn); 
-        } 
+            to {
+                transform: rotate(1turn);
+            }
         }
-            .st0{display:none;}
-            .st1{display:inline;}
-            .st2{opacity:0.29;}
-            .st3{fill:#FFFFFF;}
-            .st4{clip-path:url(#SVGID_2_);fill:#FFFFFF;}
-            .st5{clip-path:url(#SVGID_4_);}
-            .st6{clip-path:url(#SVGID_6_);}
-            .st7{clip-path:url(#SVGID_8_);}
-            .st8{clip-path:url(#SVGID_10_);}
-            .st9{fill:none;}
-            .st10{clip-path:url(#SVGID_12_);}
-            .st11{opacity:0.7;}
-            .st12{clip-path:url(#SVGID_14_);}
-            .st13{opacity:0.2;}
-            .st14{clip-path:url(#SVGID_16_);}
-            .st15{opacity:0.3;fill:#FFFFFF;enable-background:new    ;}
-                
-            * {
-        box-sizing: border-box;
+
+        .st0 {
+            display: none;
         }
-                .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        padding-top: 100px; /* Location of the box */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+        .st1 {
+            display: inline;
+        }
+
+        .st2 {
+            opacity: 0.29;
+        }
+
+        .st3 {
+            fill: #FFFFFF;
+        }
+
+        .st4 {
+            clip-path: url(#SVGID_2_);
+            fill: #FFFFFF;
+        }
+
+        .st5 {
+            clip-path: url(#SVGID_4_);
+        }
+
+        .st6 {
+            clip-path: url(#SVGID_6_);
+        }
+
+        .st7 {
+            clip-path: url(#SVGID_8_);
+        }
+
+        .st8 {
+            clip-path: url(#SVGID_10_);
+        }
+
+        .st9 {
+            fill: none;
+        }
+
+        .st10 {
+            clip-path: url(#SVGID_12_);
+        }
+
+        .st11 {
+            opacity: 0.7;
+        }
+
+        .st12 {
+            clip-path: url(#SVGID_14_);
+        }
+
+        .st13 {
+            opacity: 0.2;
+        }
+
+        .st14 {
+            clip-path: url(#SVGID_16_);
+        }
+
+        .st15 {
+            opacity: 0.3;
+            fill: #FFFFFF;
+            enable-background: new;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
         }
 
         /* Modal Content */
         .modal-content {
-        position: relative;
-        background-color: #fefefe;
-        margin: auto;
-        padding: 0;
-        border: 1px solid #888;
-        width: 80%;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-        -webkit-animation-name: animatetop;
-        -webkit-animation-duration: 0.4s;
-        animation-name: animatetop;
-        animation-duration: 0.4s
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
         }
 
         /* Add Animation */
         @-webkit-keyframes animatetop {
-        from {top:-300px; opacity:0} 
-        to {top:0; opacity:1}
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
         }
 
         @keyframes animatetop {
-        from {top:-300px; opacity:0}
-        to {top:0; opacity:1}
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
         }
 
         /* The Close Button */
         .close {
-        color: white;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
         }
 
         .close:hover,
         .close:focus {
-        color: #000;
-        text-decoration: none;
-        cursor: pointer;
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
         }
 
         .modal-header {
-        padding: 2px 16px;
-        background-color: #5cb85c;
-        color: white;
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
         }
 
-        .modal-body {padding: 2px 16px;}
+        .modal-body {
+            padding: 2px 16px;
+        }
 
         .modal-footer {
-        padding: 2px 16px;
-        background-color: #5cb85c;
-        color: white;
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
         }
-	</style>
+    </style>
 </head>
 
 <body>
@@ -261,14 +349,18 @@
         </header>
 
         <div id="colorlib-services" style="padding-bottom:0em;">
-	        <div class="row">
+            <div class="row">
                 <div class="col-md-12 col-pb-sm text-center">
                     <h2>Meetups</h2>
-                    <h4 style="margin: auto 20px;">Talk about Avengers or Justice league, each & every hero plays an unique role but even they need to collaborate to win, so does our community! Each and every geek we have is a hero & without your contribution we can't succeed. Take a step & share your superpower, conduct a meetup session. Get geeky rewards for your contribution(s).</h4>
+                    <h4 style="margin: auto 20px;">Talk about Avengers or Justice league, each & every hero plays an
+                        unique role but even they need to collaborate to win, so does our community! Each and every
+                        geek we have is a hero & without your contribution we can't succeed. Take a step & share your
+                        superpower, conduct a meetup session. Get geeky rewards for your contribution(s).</h4>
                     <button class="btn-success" id="myBtn" style="margin-top: 50px;">Organize a Jam</button>
-		    <button class="btn-success" id="myBtn2" style="margin-top: 50px; margin-left:10px;">Poll : What's next?</button>
+                    <button class="btn-success" id="myBtn2" style="margin-top: 50px; margin-left:10px;">Poll : What's
+                        next?</button>
                 </div>
-		<!-- modal for organise jam form -->	
+                <!-- modal for organise jam form -->
                 <div id="myModal" class="modal">
                     <!-- Modal content -->
                     <div class="modal-content">
@@ -276,29 +368,33 @@
                             <span class="close">&times;</span>
                         </div>
                         <div class="modal-body">
-                            <iframe class="airtable-embed" src="https://airtable.com/embed/shrGzMiUwe3GnEHlK?backgroundColor=purple" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+                            <iframe class="airtable-embed" src="https://airtable.com/embed/shrGzMiUwe3GnEHlK?backgroundColor=purple"
+                                frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
                         </div>
                     </div>
                 </div>
-		<!-- modal for poll -->	
-		  <div id="myModal2" class="modal">
+                <!-- modal for poll -->
+                <div id="myModal2" class="modal">
                     <!-- Modal content -->
                     <div class="modal-content">
                         <div class="modal-header" style="height:25px; background-color:black;">
                             <span class="close">&times;</span>
                         </div>
                         <div class="modal-body">
-                         <iframe class="airtable-embed" src="https://airtable.com/embed/shrw9wPfXS1Cdf2YT?backgroundColor=purple" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe> </div>
+                            <iframe class="airtable-embed" src="https://airtable.com/embed/shrw9wPfXS1Cdf2YT?backgroundColor=purple"
+                                frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+                        </div>
                     </div>
-                </div>	
+                </div>
             </div>
-		</div>
+        </div>
         <!-- Meetup airtable -->
-        <iframe class="airtable-embed" src="https://airtable.com/embed/shrEdjHGmwBiavDkO?backgroundColor=purple" frameborder="1" onmousewheel="" width="95%" style="border: 2px solid black;height:100vh;display:block;margin: auto;"></iframe> 	
+        <iframe class="airtable-embed" src="https://airtable.com/embed/shrEdjHGmwBiavDkO?backgroundColor=purple"
+            frameborder="1" onmousewheel="" width="95%" style="border: 2px solid black;height:100vh;display:block;margin: auto;"></iframe>
         <!-- Meetup airtable -->
-	</div>   
+    </div>
 
-	<footer>
+    <footer>
         <div id="footer">
             <div class="container">
                 <div class="row">
@@ -326,28 +422,28 @@
                             <a href="https://www.linkedin.com/company/fnplus/"><i class="icon-linkedin"></i></a>
                         </p>
                     </div>
-                </div>      
+                </div>
 
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <p>
-                                    <span class="block">
-                                        Copyright &copy;
-                                        <script>
-                                            document.write(new Date().getFullYear());
-                                        </script> All rights reserved | Made with <i class="icon-heart" aria-hidden="true"></i>
-                                        by Fnplus & <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --><br></span>
-                                </p>
-                            </div>
-                        </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>
+                            <span class="block">
+                                Copyright &copy;
+                                <script>
+                                    document.write(new Date().getFullYear());
+                                </script> All rights reserved | Made with <i class="icon-heart" aria-hidden="true"></i>
+                                by Fnplus & <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --><br></span>
+                        </p>
                     </div>
-            </footer>
+                </div>
+            </div>
+    </footer>
     <!-- modal -->
     <script>
         // Get the modal
         var modal = document.getElementById('myModal');
-	var modal2 = document.getElementById('myModal2');    
+        var modal2 = document.getElementById('myModal2');
 
         // Get the button that opens the modal
         var btn = document.getElementById("myBtn");
@@ -357,27 +453,27 @@
         var span = document.getElementsByClassName("close")[0];
 
         // When the user clicks the button, open the modal 
-        btn.onclick = function() {
-        modal.style.display = "block";
+        btn.onclick = function () {
+            modal.style.display = "block";
         }
-        btn2.onclick = function() {
-        modal2.style.display = "block";
+        btn2.onclick = function () {
+            modal2.style.display = "block";
         }
 
         // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-        modal.style.display = "none";
-        modal2.style.display = "none";
+        span.onclick = function () {
+            modal.style.display = "none";
+            modal2.style.display = "none";
         }
-	
+
 
         // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
         }
-	window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target == modal2) {
                 modal2.style.display = "none";
             }
@@ -400,5 +496,6 @@
     <!-- Main JS (Do not remove) -->
     <script src="js/main.js"></script>
 
-    </body>
+</body>
+
 </html>
