@@ -191,6 +191,9 @@ var load_widget = function($, ctx) {
               let upcoming_events_array = data.results.slice(1, 5);
               for (var i in upcoming_events_array) {
                 let event = upcoming_events_array[i];
+                const regex = /[[A-Za-z0-9].+]/g;
+                let name = event.name.replace(regex, "");
+                console.log(name);
                 $(".muupcom-meetups", ctx).append(
                   '<div class="mupast-main"> \
                                 <div class= "mupast-inner"> \
@@ -202,18 +205,15 @@ var load_widget = function($, ctx) {
                                             <div class="mupast-widget-heading"><a href="' +
                     event.event_url +
                     '" target="_blank">' +
-                    event.name +
+                    name +
                     "</a></div> \
                                         </div> \
                                     </div>"
                 );
               }
             }
-            console.log(data);
             var event = data.results[0];
-            console.log(event);
             var venue = event.venue;
-            console.log(venue);
             var city;
             if (!venue || !venue.city) {
               city = group.city;
@@ -288,6 +288,8 @@ var load_widget = function($, ctx) {
             let past_events_array = data.results.reverse().slice(0, 5);
             for (var i in past_events_array) {
               let event = past_events_array[i];
+              const regex = /[[A-Za-z0-9].+]/g;
+              let name = event.name.replace(regex, "");
               $(".mupast-meetups", ctx).append(
                 '<div class="mupast-main"> \
                                 <div class= "mupast-inner"> \
@@ -299,7 +301,7 @@ var load_widget = function($, ctx) {
                                             <div class="mupast-widget-heading"><a href="' +
                   event.event_url +
                   '" target="_blank">' +
-                  event.name +
+                  name +
                   "</a></div> \
                                         </div> \
                                     </div>"
