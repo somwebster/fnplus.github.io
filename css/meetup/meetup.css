@@ -240,6 +240,14 @@
   color: black;
 }
 
+.muupcom-content {
+  padding: 5px 0 0 10px;
+}
+
+.muupcom-time {
+  padding: 0 0 0 10px;
+}
+
 @media only screen and (max-width: 768px) {
   .mupast-main {
     height: 80px;

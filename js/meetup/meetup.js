@@ -193,7 +193,20 @@ var load_widget = function($, ctx) {
                 let event = upcoming_events_array[i];
                 const regex = /[[A-Za-z0-9].+]/g;
                 let name = event.name.replace(regex, "");
-                console.log(name);
+                var venue = event.venue;
+                var venue_addr;
+                if (venue) {
+                  if (venue.name !== undefined) {
+                    venue_addr = " | " + venue.name;
+                  } else if (venue.address_1 !== undefined) {
+                    venue_addr = " | " + venue.address_1;
+                  } else {
+                    venue_addr = "";
+                  }
+                } else {
+                  venue_addr = "";
+                }
+
                 $(".muupcom-meetups", ctx).append(
                   '<div class="mupast-main"> \
                                 <div class= "mupast-inner"> \
@@ -201,12 +214,16 @@ var load_widget = function($, ctx) {
                     getFormattedDate(event.time).replace(",", "") +
                     ' </div> \
                                     </div> \
-                                        <div class="mupast-content"> \
+                                        <div class="muupcom-content"> \
                                             <div class="mupast-widget-heading"><a href="' +
                     event.event_url +
                     '" target="_blank">' +
                     name +
                     "</a></div> \
+                    <div class='muupcom-time'> " +
+                    getFormattedTime(event.time) +
+                    venue_addr +
+                    "</div> \
                                         </div> \
                                     </div>"
                 );
@@ -219,16 +236,6 @@ var load_widget = function($, ctx) {
               city = group.city;
             } else {
               city = venue.city;
-            }
-            var state_country;
-            if (!venue || !venue.state) {
-              if (group.state == "") {
-                state_country = group.country.toUpperCase();
-              } else {
-                state_country = group.state;
-              }
-            } else {
-              state_country = venue.state;
             }
             var venue_addr;
             if (venue) {
@@ -243,12 +250,15 @@ var load_widget = function($, ctx) {
               venue_addr = "";
             }
             var location = venue_addr + city + ", India";
+
+            const regex = /[[A-Za-z0-9].+]/g;
+            let name = event.name.replace(regex, "");
             $(".next-event", ctx).append(
               "<div class='mup-tlabel mupn-heading'> \
                             <a target='_blank' href='" +
                 event.event_url +
                 "'>" +
-                event.name +
+                name +
                 "</a> \
                             </div>" +
                 '<div class="mup-tlabel">' +
