@@ -215,7 +215,7 @@ var load_widget = function($, ctx) {
                     ' </div> \
                                     </div> \
                                         <div class="muupcom-content"> \
-                                            <div class="mupast-widget-heading"><a href="' +
+                                            <div class="mupast-widget-heading"><a class="hover-animation" href="' +
                     event.event_url +
                     '" target="_blank">' +
                     name +
@@ -308,7 +308,7 @@ var load_widget = function($, ctx) {
                   ' </div> \
                                     </div> \
                                         <div class="mupast-content"> \
-                                            <div class="mupast-widget-heading"><a href="' +
+                                            <div class="mupast-widget-heading"><a class="hover-animation" href="' +
                   event.event_url +
                   '" target="_blank">' +
                   name +
