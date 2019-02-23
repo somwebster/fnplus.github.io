@@ -191,8 +191,7 @@ var load_widget = function($, ctx) {
               let upcoming_events_array = data.results.slice(1, 5);
               for (var i in upcoming_events_array) {
                 let event = upcoming_events_array[i];
-                const regex = /[[A-Za-z0-9].+]/g;
-                let name = event.name.replace(regex, "");
+                let name = event.name;
                 var venue = event.venue;
                 var venue_addr;
                 if (venue) {
@@ -251,8 +250,7 @@ var load_widget = function($, ctx) {
             }
             var location = venue_addr + city + ", India";
 
-            const regex = /[[A-Za-z0-9].+]/g;
-            let name = event.name.replace(regex, "");
+            let name = event.name;
             $(".next-event", ctx).append(
               "<div class='mup-tlabel mupn-heading'> \
                             <a target='_blank' href='" +
@@ -298,8 +296,7 @@ var load_widget = function($, ctx) {
             let past_events_array = data.results.reverse().slice(0, 5);
             for (var i in past_events_array) {
               let event = past_events_array[i];
-              const regex = /[[A-Za-z0-9].+]/g;
-              let name = event.name.replace(regex, "");
+              let name = event.name;
               $(".mupast-meetups", ctx).append(
                 '<div class="mupast-main"> \
                                 <div class= "mupast-inner"> \
