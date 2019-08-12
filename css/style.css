@@ -1582,3 +1582,207 @@ canvas {
 .btn-view:hover:before {
   top: 0;
 }
+
+clearfix, .m-timeline li {
+  zoom: 1;
+  
+}
+.clearfix:before, .m-timeline li:before, .clearfix:after, .m-timeline li:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after, .m-timeline li:after {
+  clear: both;
+}
+
+.m-timeline {
+  margin: 0 20px;
+}
+.m-timeline ul {
+  padding: 0;
+  margin: 0;
+}
+.m-timeline li {
+  position: relative;
+  list-style-type: none;
+  clear: both;
+}
+.m-timeline .module-header {
+  text-transform: uppercase;
+  text-align: center;
+}
+.m-timeline .module-canvas:before,
+.m-timeline .m-timeline .text-canvas:before {
+  display: none;
+}
+.m-timeline .module-canvas {
+  position: relative;
+  padding-top: 20px;
+}
+.m-timeline .line {
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  bottom: 0px;
+  z-index: 1;
+  width: 4px;
+  background: url("http://assets.bagenda.com/codepen/images/bg-dot.png") repeat-y left top;
+  margin-left: -2px;
+  display: none;
+}
+.m-timeline .text {
+  margin-bottom: 30px;
+}
+.m-timeline .text-canvas {
+  background: linear-gradient(to bottom right, #029843, #e0fcf0);
+  position: relative;
+
+  color: #fff;
+  padding: 1em;
+}
+.m-timeline .text-canvas:before {
+  background: linear-gradient(to bottom right, #029843, #e0fcf0);
+  display: none;
+  content: " ";
+  position: absolute;
+  z-index: 1;
+  right: -34.5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 7px;
+  height: 7px;
+
+}
+.m-timeline .text-canvas:after {
+  background: linear-gradient(to bottom right, #029843, #e0fcf0);
+  display: block;
+  content: " ";
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: -8.5px;
+  box-sizing: border-box;
+  transform: translateX(-50%) rotate(-135deg);
+  width: 15px;
+  height: 15px;
+  background-color: inherit;
+
+}
+.m-timeline .text-canvas p:last-child {
+  margin-bottom: 0;
+}
+.m-timeline .graphics {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.m-timeline .graphics img {
+  max-width: 100%;
+}
+.m-timeline .content-table {
+  display: table;
+  width: 100%;
+}
+.m-timeline .content-table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+@media only screen and (min-width: 35.5em) {
+  .m-timeline {
+    margin: 0 40px;
+  }
+  .m-timeline.vertical-align li {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .m-timeline.vertical-align li:nth-child(even) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .m-timeline.vertical-align .graphics, .m-timeline.vertical-align .text {
+    -webkit-box-flex: 0 1 50%;
+    -moz-box-flex: 0 1 50%;
+    -webkit-flex: 0 1 50%;
+    -ms-flex: 0 1 50%;
+    flex: 0 1 50%;
+  }
+  .m-timeline .line {
+    display: block;
+  }
+  .m-timeline .text-canvas:before {
+    display: block;
+  }
+  .m-timeline .text-canvas:after {
+    bottom: inherit;
+    top: 50%;
+    right: -16px;
+    left: inherit;
+    transform: translateY(-50%) translateX(-50%) rotate(135deg);
+  }
+  .m-timeline .graphics, .m-timeline .text {
+    width: 50%;
+    float: left;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .m-timeline .text {
+    padding-right: 30px;
+  }
+  .m-timeline .graphics img {
+    width: 100%;
+  }
+  .m-timeline li {
+    margin-bottom: 30px;
+  }
+  .m-timeline li:nth-child(odd) .graphics {
+    float: right;
+    text-align: left;
+  }
+  .m-timeline li:nth-child(odd) .text {
+    float: left;
+  }
+  .m-timeline li:nth-child(even) .text {
+    padding-right: 0;
+    padding-left: 30px;
+  }
+  .m-timeline li:nth-child(even) .text-canvas:after {
+    left: -1px;
+    transform: translateY(-50%) translateX(-50%) rotate(-45deg);
+  }
+  .m-timeline li:nth-child(even) .text-canvas:before {
+    right: auto;
+    left: -34.5px;
+  }
+  .m-timeline li:nth-child(even) .graphics {
+    float: left;
+    text-align: right;
+  }
+  .m-timeline li:nth-child(even) .text {
+    float: right;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .m-timeline .graphics img {
+    width: auto;
+  }
+}
